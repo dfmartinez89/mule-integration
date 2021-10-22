@@ -1,0 +1,7 @@
+INDEX VERSION 1.127+C:\Users\dfmar\AnypointStudio\workspace\.metadata\.plugins\org.eclipse.jdt.core
+1690891076.index
+3827684746.index
+2468537628.index
+222720191.index
+54703828.index
+332383186.index

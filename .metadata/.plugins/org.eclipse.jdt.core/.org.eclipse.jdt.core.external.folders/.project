@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.jdt.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.link2</name>
+			<type>2</type>
+			<location>C:/Users/dfmar/Documents/MASTER/Integracion/AnypointStudio-for-win-64bit-6.1.2-201610111809/AnypointStudio/plugins/org.mule.tooling.server.3.8.2.ee_6.1.2.201704271531/mule/lib/mule/per-app</location>
+		</link>
+		<link>
+			<name>.link3</name>
+			<type>2</type>
+			<location>C:/Users/dfmar/Documents/MASTER/Integracion/AnypointStudio-for-win-64bit-6.1.2-201610111809/AnypointStudio/plugins/org.mule.tooling.server.3.8.2.ee_6.1.2.201704271531/mule/plugins/data-mapper-plugin/classes</location>
+		</link>
+	</linkedResources>
+</projectDescription>
