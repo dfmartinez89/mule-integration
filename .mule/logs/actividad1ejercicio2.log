@@ -92,3 +92,237 @@
 **********************************************************************
 2021-10-21 22:50:28,162 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is / and message id is 85b5cd80-32b0-11ec-9333-a2886992f16c
 2021-10-21 22:50:28,365 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /favicon.ico and message id is 85e4a5b0-32b0-11ec-9333-a2886992f16c
+2021-10-22 15:25:33,435 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio2'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:25:33,984 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 15:25:34,093 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 15:25:34,265 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 15:25:34,265 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 15:25:34,374 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 15:25:34 CEST 2021]; root of context hierarchy
+2021-10-22 15:25:36,347 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 15:25:37,711 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2021-10-22 15:25:38,143 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-tx-log\tx2.log
+2021-10-22 15:25:38,159 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-xa-tx-log\tx2.log
+2021-10-22 15:25:38,318 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-22 15:25:38,318 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio2Flow
+2021-10-22 15:25:38,318 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@138aa3cc
+2021-10-22 15:25:38,365 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:25:38,756 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio2\actividad1ejercicio2.xml'}]"
+2021-10-22 15:25:38,756 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio2\actividad1ejercicio2.xml'}]"
+2021-10-22 15:25:39,309 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'actividad1ejercicio2'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:25:39,309 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2021-10-22 15:25:39,309 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2021-10-22 15:25:39,403 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2021-10-22 15:25:39,403 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:25:39,403 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2021-10-22 15:25:39,403 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: actividad1ejercicio2Flow
+2021-10-22 15:25:39,418 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:25:39,494 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2021-10-22 15:25:44,086 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: actividad1ejercicio2                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   Batch module default engine                                      *
+*   DevKit Extension Information                                     *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2021-10-22 15:25:51,951 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /Mulesoft and message id is 93db90d0-333b-11ec-b4a5-a2886992f16c
+2021-10-22 15:25:52,130 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /favicon.ico and message id is 94070da0-333b-11ec-b4a5-a2886992f16c
+2021-10-22 15:28:08,239 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio2'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:28:08,783 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 15:28:08,893 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 15:28:09,049 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 15:28:09,049 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 15:28:09,158 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 15:28:09 CEST 2021]; root of context hierarchy
+2021-10-22 15:28:11,150 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 15:28:12,350 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2021-10-22 15:28:12,746 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-tx-log\tx2.log
+2021-10-22 15:28:12,777 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-xa-tx-log\tx2.log
+2021-10-22 15:28:12,902 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-22 15:28:12,918 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio2Flow
+2021-10-22 15:28:12,918 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@138aa3cc
+2021-10-22 15:28:12,965 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:28:13,356 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio2\actividad1ejercicio2.xml'}]"
+2021-10-22 15:28:13,356 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio2\actividad1ejercicio2.xml'}]"
+2021-10-22 15:28:13,768 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'actividad1ejercicio2'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:28:13,784 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2021-10-22 15:28:13,784 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2021-10-22 15:28:13,862 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2021-10-22 15:28:13,877 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:28:13,877 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2021-10-22 15:28:13,877 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: actividad1ejercicio2Flow
+2021-10-22 15:28:13,877 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:28:13,971 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2021-10-22 15:28:18,601 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: actividad1ejercicio2                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   Batch module default engine                                      *
+*   DevKit Extension Information                                     *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2021-10-22 15:28:21,106 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /Mulesoft and message id is ecc31e20-333b-11ec-99fb-a2886992f16c
+2021-10-22 15:28:21,228 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /favicon.ico and message id is ece6d2c0-333b-11ec-99fb-a2886992f16c
+2021-10-22 15:29:24,320 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio2'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:29:24,850 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 15:29:24,954 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 15:29:25,158 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 15:29:25,158 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 15:29:25,267 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 15:29:25 CEST 2021]; root of context hierarchy
+2021-10-22 15:29:27,110 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 15:29:28,328 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2021-10-22 15:29:28,797 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-tx-log\tx2.log
+2021-10-22 15:29:28,813 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-xa-tx-log\tx2.log
+2021-10-22 15:29:28,964 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-22 15:29:28,964 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio2Flow
+2021-10-22 15:29:28,964 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@138aa3cc
+2021-10-22 15:29:29,005 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:29:29,364 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio2\actividad1ejercicio2.xml'}]"
+2021-10-22 15:29:29,364 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio2\actividad1ejercicio2.xml'}]"
+2021-10-22 15:29:29,880 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'actividad1ejercicio2'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:29:29,880 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2021-10-22 15:29:29,880 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2021-10-22 15:29:29,958 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2021-10-22 15:29:29,958 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:29:29,958 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2021-10-22 15:29:29,974 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: actividad1ejercicio2Flow
+2021-10-22 15:29:29,974 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:29:30,036 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2021-10-22 15:29:34,676 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: actividad1ejercicio2                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   Batch module default engine                                      *
+*   DevKit Extension Information                                     *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2021-10-22 15:30:36,116 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /Mulesoft and message id is 3d399140-333c-11ec-a970-a2886992f16c
+2021-10-22 15:30:36,272 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /favicon.ico and message id is 3d63ae80-333c-11ec-a970-a2886992f16c
+2021-10-22 15:30:46,283 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is / and message id is 435c75b0-333c-11ec-a970-a2886992f16c
+2021-10-22 15:30:46,458 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /favicon.ico and message id is 437729a0-333c-11ec-a970-a2886992f16c
+2021-10-22 15:32:18,498 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.02] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is / and message id is 7a5221a0-333c-11ec-a970-a2886992f16c
+2021-10-22 15:32:18,576 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.02] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /favicon.ico and message id is 7a5e0880-333c-11ec-a970-a2886992f16c
+2021-10-22 15:35:10,637 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.03] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /Mulesoft and message id is e0ec7550-333c-11ec-a970-a2886992f16c
+2021-10-22 15:35:10,703 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.03] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /favicon.ico and message id is e0f7bff0-333c-11ec-a970-a2886992f16c
+2021-10-22 15:36:00,781 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Stopping app 'actividad1ejercicio2'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:36:00,783 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Stopping flow: actividad1ejercicio2Flow
+2021-10-22 15:36:00,783 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Stopping service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:36:00,861 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping model: _muleSystemModel
+2021-10-22 15:36:00,876 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Stopped listener on http://0.0.0.0:8081
+2021-10-22 15:36:00,876 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopping ResourceManager
+2021-10-22 15:36:00,876 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopped ResourceManager
+2021-10-22 15:36:00,892 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing app 'actividad1ejercicio2'                     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:36:00,908 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2021-10-22 15:36:00,908 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: actividad1ejercicio2Flow
+2021-10-22 15:36:00,908 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:36:00,908 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2021-10-22 15:36:01,315 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 15:29:25 CEST 2021]; root of context hierarchy
+2021-10-22 15:36:01,471 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application "actividad1ejercicio2" shut down normally on:          *
+* 10/22/21 3:36 PM                                                   *
+* Up for: 0 days, 0 hours, 6 mins, 31.591 sec                        *
+**********************************************************************
+2021-10-22 15:36:01,690 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio2'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:36:01,721 [Mule.app.deployer.monitor.1.thread.1] WARN  com.mulesoft.module.client.APIPlatformClientCoreExtension - Client ID or Client Secret were not provided. API Manager client is DISABLED for app actividad1ejercicio2
+2021-10-22 15:36:01,721 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 15:36:01,736 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 15:36:01,752 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 15:36:01,752 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 15:36:01,768 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@7bd82a6d: startup date [Fri Oct 22 15:36:01 CEST 2021]; root of context hierarchy
+2021-10-22 15:36:02,285 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 15:36:51,288 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio2'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:36:51,862 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 15:36:51,972 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 15:36:52,143 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 15:36:52,143 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 15:36:52,253 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 15:36:52 CEST 2021]; root of context hierarchy
+2021-10-22 15:36:54,080 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 15:36:55,360 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2021-10-22 15:36:55,782 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-tx-log\tx2.log
+2021-10-22 15:36:55,798 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio2\queue-xa-tx-log\tx2.log
+2021-10-22 15:36:55,943 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-22 15:36:55,958 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio2Flow
+2021-10-22 15:36:55,958 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@138aa3cc
+2021-10-22 15:36:55,990 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:36:56,335 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio2\actividad1ejercicio2.xml'}]"
+2021-10-22 15:36:56,335 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio2\actividad1ejercicio2.xml'}]"
+2021-10-22 15:36:56,755 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'actividad1ejercicio2'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:36:56,758 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2021-10-22 15:36:56,758 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2021-10-22 15:36:56,837 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2021-10-22 15:36:56,853 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 15:36:56,853 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2021-10-22 15:36:56,853 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: actividad1ejercicio2Flow
+2021-10-22 15:36:56,853 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: actividad1ejercicio2Flow.stage1
+2021-10-22 15:36:56,931 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2021-10-22 15:37:01,522 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: actividad1ejercicio2                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   Batch module default engine                                      *
+*   DevKit Extension Information                                     *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2021-10-22 15:37:05,501 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /Mulesoft and message id is 25523950-333d-11ec-bc9f-a2886992f16c
+2021-10-22 15:37:05,623 [[actividad1ejercicio2].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /favicon.ico and message id is 2575edf0-333d-11ec-bc9f-a2886992f16c

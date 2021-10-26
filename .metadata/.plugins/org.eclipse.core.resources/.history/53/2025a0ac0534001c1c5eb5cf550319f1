@@ -1,0 +1,47 @@
+package actividad1ejercicio4;
+
+import org.mule.api.MuleEventContext;
+import org.mule.api.lifecycle.Callable;
+
+public class CalcularDivisa implements Callable {
+	private String input;
+	float dollar;
+	float euro;
+	String error = "Valor de entrada incorrecto " + input + "no se puede convertir";
+
+	@Override
+	public Object onCall(MuleEventContext eventContext) {
+		input = eventContext.getMessage().getInboundProperty("http.request.path");
+		if (urlBuena()) {
+			return convertirDollarEuro();
+		} else {
+			return error;
+		}
+	}
+
+	public boolean urlBuena() {
+
+		if (input.contains("/dollar2eur/")) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean validarDollar() {
+		if (dollar > 0) {
+			return true;
+		}
+		return false;
+	}
+
+	public float convertirDollarEuro() {
+
+		dollar = Float.parseFloat(input.substring(12));
+		euro = (float) (dollar * 0.86);
+
+		return euro;
+
+	}
+
+}

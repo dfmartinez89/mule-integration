@@ -1,0 +1,1 @@
+Valor o formato incorrecto de la cantidad introducida

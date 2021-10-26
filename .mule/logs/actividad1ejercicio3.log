@@ -499,3 +499,474 @@
 2021-10-21 23:34:42,435 [[actividad1ejercicio3].HTTP_Listener_Configuration1.worker.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'connector.file.mule.default.dispatcher.381870368'. Object is: FileMessageDispatcher
 2021-10-21 23:34:42,446 [[actividad1ejercicio3].HTTP_Listener_Configuration1.worker.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'connector.file.mule.default.dispatcher.381870368'. Object is: FileMessageDispatcher
 2021-10-21 23:34:42,453 [[actividad1ejercicio3].HTTP_Listener_Configuration1.worker.01] INFO  org.mule.transport.file.FileConnector - Writing file to: C:\Users\dfmar\AnypointStudio\workspace\actividad1ejercicio3\logfiles\b3b9fcf0-32b6-11ec-aaad-a2886992f16c.txt
+2021-10-22 17:41:31,723 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio3'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:41:32,337 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 17:41:32,462 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 17:41:32,618 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 17:41:32,618 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 17:41:32,743 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 17:41:32 CEST 2021]; root of context hierarchy
+2021-10-22 17:41:34,766 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 17:41:36,283 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2021-10-22 17:41:36,680 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx2.log
+2021-10-22 17:41:36,696 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx2.log
+2021-10-22 17:41:36,758 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: connector.file.mule.default
+2021-10-22 17:41:36,946 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-22 17:41:36,961 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio3Flow
+2021-10-22 17:41:36,961 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5eea5627
+2021-10-22 17:41:36,993 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: actividad1ejercicio3Flow.stage1
+2021-10-22 17:41:37,321 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio3\actividad1ejercicio3.xml'}]"
+2021-10-22 17:41:37,321 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio3\actividad1ejercicio3.xml'}]"
+2021-10-22 17:41:37,883 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'actividad1ejercicio3'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:41:37,883 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2021-10-22 17:41:37,883 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2021-10-22 17:41:37,966 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2021-10-22 17:41:38,075 [main] ERROR org.mule.module.launcher.application.DefaultMuleApplication - 
+********************************************************************************
+Message               : Failed to invoke lifecycle phase "start" on object: org.mule.module.http.internal.listener.DefaultHttpListenerConfig@ae73c80
+Element               : /HTTP_Listener_Configuration1 @ app:actividad1ejercicio3.xml:11 (HTTP Listener Configuration)
+--------------------------------------------------------------------------------
+Root Exception stack trace:
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.glassfish.grizzly.nio.transport.TCPNIOBindingHandler.bindToChannelAndAddress(TCPNIOBindingHandler.java:131)
+	at org.glassfish.grizzly.nio.transport.TCPNIOBindingHandler.bind(TCPNIOBindingHandler.java:88)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:238)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:218)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:209)
+	at org.mule.module.http.internal.listener.grizzly.GrizzlyServer.start(GrizzlyServer.java:41)
+	at org.mule.module.http.internal.listener.DefaultHttpListenerConfig.start(DefaultHttpListenerConfig.java:274)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:237)
+	at org.mule.lifecycle.RegistryLifecycleCallback.doApplyLifecycle(RegistryLifecycleCallback.java:99)
+	at org.mule.lifecycle.RegistryLifecycleCallback.onTransition(RegistryLifecycleCallback.java:71)
+	at org.mule.lifecycle.RegistryLifecycleManager.invokePhase(RegistryLifecycleManager.java:155)
+	at org.mule.lifecycle.RegistryLifecycleManager.fireLifecycle(RegistryLifecycleManager.java:126)
+	at org.mule.registry.AbstractRegistryBroker.fireLifecycle(AbstractRegistryBroker.java:88)
+	at org.mule.registry.MuleRegistryHelper.fireLifecycle(MuleRegistryHelper.java:141)
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:91)
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:87)
+	at org.mule.lifecycle.MuleContextLifecycleManager.invokePhase(MuleContextLifecycleManager.java:69)
+	at org.mule.lifecycle.MuleContextLifecycleManager.fireLifecycle(MuleContextLifecycleManager.java:61)
+	at org.mule.DefaultMuleContext.start(DefaultMuleContext.java:311)
+	at org.mule.module.launcher.application.DefaultMuleApplication.start(DefaultMuleApplication.java:139)
+	at org.mule.module.launcher.artifact.ArtifactWrapper$4.execute(ArtifactWrapper.java:105)
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:136)
+	at org.mule.module.launcher.artifact.ArtifactWrapper.start(ArtifactWrapper.java:100)
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:26)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:309)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:164)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:253)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:75)
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.deployPackedApps(DeploymentDirectoryWatcher.java:278)
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.start(DeploymentDirectoryWatcher.java:150)
+	at org.mule.module.launcher.MuleDeploymentService.start(MuleDeploymentService.java:134)
+	at org.mule.module.launcher.MuleContainer.start(MuleContainer.java:172)
+	at org.mule.tooling.server.application.ApplicationDeployer.main(ApplicationDeployer.java:15)
+
+********************************************************************************
+
+2021-10-22 17:41:38,085 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing app 'actividad1ejercicio3'                     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:41:38,085 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2021-10-22 17:41:38,085 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: actividad1ejercicio3Flow
+2021-10-22 17:41:38,101 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: actividad1ejercicio3Flow.stage1
+2021-10-22 17:41:38,101 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2021-10-22 17:41:38,101 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing connector: connector.file.mule.default
+2021-10-22 17:41:38,414 [main] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 17:41:32 CEST 2021]; root of context hierarchy
+2021-10-22 17:41:38,436 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application "actividad1ejercicio3" shut down normally on:          *
+* 10/22/21 5:41 PM                                                   *
+* Up for: 0 days, 0 hours, 0 mins, 0.553 sec                         *
+**********************************************************************
+2021-10-22 17:42:28,853 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio3'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:42:28,885 [Mule.app.deployer.monitor.1.thread.1] WARN  com.mulesoft.module.client.APIPlatformClientCoreExtension - Client ID or Client Secret were not provided. API Manager client is DISABLED for app actividad1ejercicio3
+2021-10-22 17:42:28,885 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 17:42:28,900 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 17:42:28,932 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 17:42:28,932 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 17:42:28,932 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@e0c3a48: startup date [Fri Oct 22 17:42:28 CEST 2021]; root of context hierarchy
+2021-10-22 17:42:29,525 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 17:42:29,807 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2021-10-22 17:42:29,846 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@e0c3a48: startup date [Fri Oct 22 17:42:28 CEST 2021]; root of context hierarchy
+2021-10-22 17:42:29,971 [Mule.app.deployer.monitor.1.thread.1] ERROR org.mule.module.launcher.application.DefaultMuleApplication - null
+org.mule.api.MuleRuntimeException: A server in port(8081) already exists for ip(0.0.0.0) or one overlapping it (0.0.0.0).
+	at org.mule.module.http.internal.listener.HttpListenerConnectionManager.createServer(HttpListenerConnectionManager.java:95) ~[mule-module-http-3.8.2.jar:3.8.2]
+	at org.mule.module.http.internal.listener.DefaultHttpListenerConfig.initialise(DefaultHttpListenerConfig.java:183) ~[mule-module-http-3.8.2.jar:3.8.2]
+	at sun.reflect.GeneratedMethodAccessor11.invoke(Unknown Source) ~[?:?]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_311]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_311]
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:237) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.phases.MuleContextInitialisePhase.applyLifecycle(MuleContextInitialisePhase.java:71) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.RegistryLifecycleCallback.doApplyLifecycle(RegistryLifecycleCallback.java:99) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.RegistryLifecycleCallback.onTransition(RegistryLifecycleCallback.java:71) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.RegistryLifecycleManager.invokePhase(RegistryLifecycleManager.java:155) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.RegistryLifecycleManager.fireLifecycle(RegistryLifecycleManager.java:126) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.registry.AbstractRegistry.fireLifecycle(AbstractRegistry.java:146) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.registry.AbstractRegistry.initialise(AbstractRegistry.java:116) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.createSpringRegistry(SpringXmlConfigurationBuilder.java:177) ~[mule-module-spring-config-3.8.2.jar:3.8.2]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.doConfigure(SpringXmlConfigurationBuilder.java:100) ~[mule-module-spring-config-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AutoConfigurationBuilder.autoConfigure(AutoConfigurationBuilder.java:102) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AutoConfigurationBuilder.doConfigure(AutoConfigurationBuilder.java:54) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.context.DefaultMuleContextFactory$1.configure(DefaultMuleContextFactory.java:89) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.context.DefaultMuleContextFactory.doCreateMuleContext(DefaultMuleContextFactory.java:222) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.context.DefaultMuleContextFactory.createMuleContext(DefaultMuleContextFactory.java:81) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.application.DefaultMuleApplication.init(DefaultMuleApplication.java:203) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.artifact.ArtifactWrapper$2.execute(ArtifactWrapper.java:63) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:136) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.init(ArtifactWrapper.java:58) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:25) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DefaultArchiveDeployer.redeploy(DefaultArchiveDeployer.java:462) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.redeployModifiedArtifacts(DeploymentDirectoryWatcher.java:561) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.redeployModifiedApplications(DeploymentDirectoryWatcher.java:538) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.run(DeploymentDirectoryWatcher.java:351) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[?:1.8.0_311]
+	at java.util.concurrent.FutureTask.runAndReset(Unknown Source) ~[?:1.8.0_311]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source) ~[?:1.8.0_311]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[?:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_311]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_311]
+2021-10-22 17:42:29,971 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - App 'actividad1ejercicio3' never started, nothing to dispose of
+2021-10-22 17:42:55,230 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio3'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:42:55,277 [Mule.app.deployer.monitor.1.thread.1] WARN  com.mulesoft.module.client.APIPlatformClientCoreExtension - Client ID or Client Secret were not provided. API Manager client is DISABLED for app actividad1ejercicio3
+2021-10-22 17:42:55,277 [Mule.app.deployer.monitor.1.thread.1] WARN  com.mulesoft.module.client.APIPlatformClientCoreExtension - Client ID or Client Secret were not provided. API Manager client is DISABLED for app actividad1ejercicio3
+2021-10-22 17:42:55,277 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 17:42:55,277 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 17:42:55,308 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 17:42:55,308 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 17:42:55,308 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@4adeb804: startup date [Fri Oct 22 17:42:55 CEST 2021]; root of context hierarchy
+2021-10-22 17:42:55,714 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 17:42:55,918 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx2.log
+2021-10-22 17:42:55,918 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx2.log
+2021-10-22 17:42:55,918 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: connector.file.mule.default
+2021-10-22 17:42:55,949 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-22 17:42:55,949 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio3Flow
+2021-10-22 17:42:55,949 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4e1ed827
+2021-10-22 17:42:55,964 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2021-10-22 17:42:55,964 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2021-10-22 17:42:55,980 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing connector: connector.file.mule.default
+2021-10-22 17:42:56,027 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@4adeb804: startup date [Fri Oct 22 17:42:55 CEST 2021]; root of context hierarchy
+2021-10-22 17:42:56,120 [Mule.app.deployer.monitor.1.thread.1] ERROR org.mule.module.launcher.application.DefaultMuleApplication - null
+java.lang.NullPointerException
+	at org.mule.module.http.internal.listener.DefaultHttpListener.initialise(DefaultHttpListener.java:209) ~[mule-module-http-3.8.2.jar:3.8.2]
+	at org.mule.construct.AbstractFlowConstruct.initialiseIfInitialisable(AbstractFlowConstruct.java:317) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.construct.AbstractPipeline.doInitialise(AbstractPipeline.java:242) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.construct.Flow.doInitialise(Flow.java:75) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.construct.AbstractFlowConstruct$1.onTransition(AbstractFlowConstruct.java:104) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.construct.AbstractFlowConstruct$1.onTransition(AbstractFlowConstruct.java:98) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:138) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.construct.FlowConstructLifecycleManager.fireInitialisePhase(FlowConstructLifecycleManager.java:78) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.construct.AbstractFlowConstruct.initialise(AbstractFlowConstruct.java:97) ~[mule-core-3.8.2.jar:3.8.2]
+	at sun.reflect.GeneratedMethodAccessor11.invoke(Unknown Source) ~[?:?]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_311]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_311]
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:237) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.phases.MuleContextInitialisePhase.applyLifecycle(MuleContextInitialisePhase.java:71) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.RegistryLifecycleCallback.doApplyLifecycle(RegistryLifecycleCallback.java:99) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.RegistryLifecycleCallback.onTransition(RegistryLifecycleCallback.java:71) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.RegistryLifecycleManager.invokePhase(RegistryLifecycleManager.java:155) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.lifecycle.RegistryLifecycleManager.fireLifecycle(RegistryLifecycleManager.java:126) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.registry.AbstractRegistry.fireLifecycle(AbstractRegistry.java:146) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.registry.AbstractRegistry.initialise(AbstractRegistry.java:116) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.createSpringRegistry(SpringXmlConfigurationBuilder.java:177) ~[mule-module-spring-config-3.8.2.jar:3.8.2]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.doConfigure(SpringXmlConfigurationBuilder.java:100) ~[mule-module-spring-config-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AutoConfigurationBuilder.autoConfigure(AutoConfigurationBuilder.java:102) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AutoConfigurationBuilder.doConfigure(AutoConfigurationBuilder.java:54) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.context.DefaultMuleContextFactory$1.configure(DefaultMuleContextFactory.java:89) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.context.DefaultMuleContextFactory.doCreateMuleContext(DefaultMuleContextFactory.java:222) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.context.DefaultMuleContextFactory.createMuleContext(DefaultMuleContextFactory.java:81) ~[mule-core-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.application.DefaultMuleApplication.init(DefaultMuleApplication.java:203) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.artifact.ArtifactWrapper$2.execute(ArtifactWrapper.java:63) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:136) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.init(ArtifactWrapper.java:58) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:25) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DefaultArchiveDeployer.redeploy(DefaultArchiveDeployer.java:462) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.redeployModifiedArtifacts(DeploymentDirectoryWatcher.java:561) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.redeployModifiedApplications(DeploymentDirectoryWatcher.java:538) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.run(DeploymentDirectoryWatcher.java:351) ~[mule-module-launcher-3.8.2.jar:3.8.2]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[?:1.8.0_311]
+	at java.util.concurrent.FutureTask.runAndReset(Unknown Source) ~[?:1.8.0_311]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Unknown Source) ~[?:1.8.0_311]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[?:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [?:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [?:1.8.0_311]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_311]
+2021-10-22 17:42:56,130 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - App 'actividad1ejercicio3' never started, nothing to dispose of
+2021-10-22 17:43:27,754 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio3'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:43:28,295 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 17:43:28,415 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 17:43:28,595 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 17:43:28,595 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 17:43:28,688 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 17:43:28 CEST 2021]; root of context hierarchy
+2021-10-22 17:43:30,542 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 17:43:31,869 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2021-10-22 17:43:32,310 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx2.log
+2021-10-22 17:43:32,325 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx2.log
+2021-10-22 17:43:32,341 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: connector.file.mule.default
+2021-10-22 17:43:32,524 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-22 17:43:32,524 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio3Flow
+2021-10-22 17:43:32,524 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@b46e103
+2021-10-22 17:43:32,549 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: actividad1ejercicio3Flow.stage1
+2021-10-22 17:43:32,893 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio3\actividad1ejercicio3.xml'}]"
+2021-10-22 17:43:32,893 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio3\actividad1ejercicio3.xml'}]"
+2021-10-22 17:43:33,452 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'actividad1ejercicio3'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:43:33,468 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2021-10-22 17:43:33,468 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2021-10-22 17:43:33,515 [main] ERROR org.mule.module.launcher.application.DefaultMuleApplication - 
+********************************************************************************
+Message               : Failed to invoke lifecycle phase "start" on object: org.mule.module.http.internal.listener.DefaultHttpListenerConfig@6ca8fcf3
+Element               : /HTTP_Listener_Configuration @ app:actividad1ejercicio3.xml:10 (HTTP Listener Configuration)
+--------------------------------------------------------------------------------
+Root Exception stack trace:
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.glassfish.grizzly.nio.transport.TCPNIOBindingHandler.bindToChannelAndAddress(TCPNIOBindingHandler.java:131)
+	at org.glassfish.grizzly.nio.transport.TCPNIOBindingHandler.bind(TCPNIOBindingHandler.java:88)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:238)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:218)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:209)
+	at org.mule.module.http.internal.listener.grizzly.GrizzlyServer.start(GrizzlyServer.java:41)
+	at org.mule.module.http.internal.listener.DefaultHttpListenerConfig.start(DefaultHttpListenerConfig.java:274)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:237)
+	at org.mule.lifecycle.RegistryLifecycleCallback.doApplyLifecycle(RegistryLifecycleCallback.java:99)
+	at org.mule.lifecycle.RegistryLifecycleCallback.onTransition(RegistryLifecycleCallback.java:71)
+	at org.mule.lifecycle.RegistryLifecycleManager.invokePhase(RegistryLifecycleManager.java:155)
+	at org.mule.lifecycle.RegistryLifecycleManager.fireLifecycle(RegistryLifecycleManager.java:126)
+	at org.mule.registry.AbstractRegistryBroker.fireLifecycle(AbstractRegistryBroker.java:88)
+	at org.mule.registry.MuleRegistryHelper.fireLifecycle(MuleRegistryHelper.java:141)
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:91)
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:87)
+	at org.mule.lifecycle.MuleContextLifecycleManager.invokePhase(MuleContextLifecycleManager.java:69)
+	at org.mule.lifecycle.MuleContextLifecycleManager.fireLifecycle(MuleContextLifecycleManager.java:61)
+	at org.mule.DefaultMuleContext.start(DefaultMuleContext.java:311)
+	at org.mule.module.launcher.application.DefaultMuleApplication.start(DefaultMuleApplication.java:139)
+	at org.mule.module.launcher.artifact.ArtifactWrapper$4.execute(ArtifactWrapper.java:105)
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:136)
+	at org.mule.module.launcher.artifact.ArtifactWrapper.start(ArtifactWrapper.java:100)
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:26)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:309)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:164)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:253)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:75)
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.deployPackedApps(DeploymentDirectoryWatcher.java:278)
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.start(DeploymentDirectoryWatcher.java:150)
+	at org.mule.module.launcher.MuleDeploymentService.start(MuleDeploymentService.java:134)
+	at org.mule.module.launcher.MuleContainer.start(MuleContainer.java:172)
+	at org.mule.tooling.server.application.ApplicationDeployer.main(ApplicationDeployer.java:15)
+
+********************************************************************************
+
+2021-10-22 17:43:33,530 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing app 'actividad1ejercicio3'                     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:43:33,530 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2021-10-22 17:43:33,530 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: actividad1ejercicio3Flow
+2021-10-22 17:43:33,530 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: actividad1ejercicio3Flow.stage1
+2021-10-22 17:43:33,530 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2021-10-22 17:43:33,546 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing connector: connector.file.mule.default
+2021-10-22 17:43:33,780 [main] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 17:43:28 CEST 2021]; root of context hierarchy
+2021-10-22 17:43:34,004 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application "actividad1ejercicio3" shut down normally on:          *
+* 10/22/21 5:43 PM                                                   *
+* Up for: 0 days, 0 hours, 0 mins, 0.552 sec                         *
+**********************************************************************
+2021-10-22 17:45:08,089 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio3'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:45:08,630 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-22 17:45:08,755 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-22 17:45:08,934 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-22 17:45:08,934 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-22 17:45:09,038 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Fri Oct 22 17:45:09 CEST 2021]; root of context hierarchy
+2021-10-22 17:45:10,892 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-22 17:45:12,287 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2021-10-22 17:45:12,778 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx2.log
+2021-10-22 17:45:12,804 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx2.log
+2021-10-22 17:45:12,804 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: connector.file.mule.default
+2021-10-22 17:45:12,975 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-22 17:45:12,975 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio3Flow
+2021-10-22 17:45:12,975 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@3138953b
+2021-10-22 17:45:13,006 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: actividad1ejercicio3Flow.stage1
+2021-10-22 17:45:13,397 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio3\actividad1ejercicio3.xml'}]"
+2021-10-22 17:45:13,397 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio3\actividad1ejercicio3.xml'}]"
+2021-10-22 17:45:13,903 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'actividad1ejercicio3'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:45:13,919 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2021-10-22 17:45:13,919 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2021-10-22 17:45:13,981 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2021-10-22 17:45:13,997 [main] INFO  org.mule.transport.file.FileConnector - Connected: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=initialise
+  this=1db87583
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2021-10-22 17:45:13,997 [main] INFO  org.mule.transport.file.FileConnector - Starting: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=initialise
+  this=1db87583
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2021-10-22 17:45:13,997 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting connector: connector.file.mule.default
+2021-10-22 17:45:13,997 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-22 17:45:14,013 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2021-10-22 17:45:14,013 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: actividad1ejercicio3Flow
+2021-10-22 17:45:14,013 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: actividad1ejercicio3Flow.stage1
+2021-10-22 17:45:14,091 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2021-10-22 17:45:18,645 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Connector Service with name Mule.actividad1ejercicio3:type=Connector,name="connector.file.mule.default.1"
+2021-10-22 17:45:18,659 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: actividad1ejercicio3                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   Batch module default engine                                      *
+*   DevKit Extension Information                                     *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2021-10-22 17:45:19,714 [[actividad1ejercicio3].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /Mulesoft and message id is 0f6912a0-334f-11ec-a263-a2886992f16c
+2021-10-22 17:45:19,900 [[actividad1ejercicio3].HTTP_Listener_Configuration.worker.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'connector.file.mule.default.dispatcher.484688776'. Object is: FileMessageDispatcher
+2021-10-22 17:45:19,948 [[actividad1ejercicio3].HTTP_Listener_Configuration.worker.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'connector.file.mule.default.dispatcher.484688776'. Object is: FileMessageDispatcher
+2021-10-22 17:45:19,956 [[actividad1ejercicio3].HTTP_Listener_Configuration.worker.01] INFO  org.mule.transport.file.FileConnector - Writing file to: C:\Users\dfmar\AnypointStudio\workspace\actividad1ejercicio3\logfiles\0f6912a0-334f-11ec-a263-a2886992f16c.txt
+2021-10-23 19:10:51,785 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'actividad1ejercicio3'                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-23 19:10:52,547 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2021-10-23 19:10:52,734 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2021-10-23 19:10:53,012 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2021-10-23 19:10:53,012 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2021-10-23 19:10:53,314 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@1ca25c47: startup date [Sat Oct 23 19:10:53 CEST 2021]; root of context hierarchy
+2021-10-23 19:10:58,305 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-10-23 19:11:00,495 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2021-10-23 19:11:01,088 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-tx-log\tx2.log
+2021-10-23 19:11:01,135 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx1.log and C:\Users\dfmar\AnypointStudio\workspace\.mule\.\.mule\actividad1ejercicio3\queue-xa-tx-log\tx2.log
+2021-10-23 19:11:01,135 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: connector.file.mule.default
+2021-10-23 19:11:01,396 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2021-10-23 19:11:01,412 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: actividad1ejercicio3Flow
+2021-10-23 19:11:01,412 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@b46e103
+2021-10-23 19:11:01,459 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: actividad1ejercicio3Flow.stage1
+2021-10-23 19:11:02,084 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio3\actividad1ejercicio3.xml'}]"
+2021-10-23 19:11:02,087 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\dfmar\AnypointStudio\workspace\.mule\apps\actividad1ejercicio3\actividad1ejercicio3.xml'}]"
+2021-10-23 19:11:03,001 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'actividad1ejercicio3'                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-23 19:11:03,048 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2021-10-23 19:11:03,048 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2021-10-23 19:11:03,220 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2021-10-23 19:11:03,220 [main] INFO  org.mule.transport.file.FileConnector - Connected: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=initialise
+  this=1d6d1d42
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2021-10-23 19:11:03,220 [main] INFO  org.mule.transport.file.FileConnector - Starting: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=initialise
+  this=1d6d1d42
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2021-10-23 19:11:03,220 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting connector: connector.file.mule.default
+2021-10-23 19:11:03,242 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2021-10-23 19:11:03,242 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2021-10-23 19:11:03,242 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: actividad1ejercicio3Flow
+2021-10-23 19:11:03,242 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: actividad1ejercicio3Flow.stage1
+2021-10-23 19:11:03,415 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2021-10-23 19:11:07,984 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Connector Service with name Mule.actividad1ejercicio3:type=Connector,name="connector.file.mule.default.1"
+2021-10-23 19:11:08,002 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: actividad1ejercicio3                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   Batch module default engine                                      *
+*   DevKit Extension Information                                     *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2021-10-23 19:11:47,992 [[actividad1ejercicio3].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Current path is /dollar2eur/100 and message id is 4e48e5b0-3424-11ec-ab3e-a2886992f16c
+2021-10-23 19:11:48,131 [[actividad1ejercicio3].HTTP_Listener_Configuration.worker.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'connector.file.mule.default.dispatcher.1302466394'. Object is: FileMessageDispatcher
+2021-10-23 19:11:48,146 [[actividad1ejercicio3].HTTP_Listener_Configuration.worker.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'connector.file.mule.default.dispatcher.1302466394'. Object is: FileMessageDispatcher
+2021-10-23 19:11:48,156 [[actividad1ejercicio3].HTTP_Listener_Configuration.worker.01] INFO  org.mule.transport.file.FileConnector - Writing file to: C:\Users\dfmar\AnypointStudio\workspace\actividad1ejercicio3\logfiles\4e48e5b0-3424-11ec-ab3e-a2886992f16c.txt

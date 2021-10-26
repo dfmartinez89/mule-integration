@@ -1,0 +1,46 @@
+package actividad1ejercicio4;
+
+import org.mule.api.MuleEventContext;
+import org.mule.api.lifecycle.Callable;
+
+public class CalcularDivisa implements Callable {
+	float dollar;
+
+	String MensajeError = "Valor o formato incorrecto de la cantidad introducida";
+
+	@Override
+	public Object onCall(MuleEventContext eventContext) {
+		try {
+			String input = eventContext.getMessage().getInboundProperty("http.request.path");
+			
+			if(!urlBuena(input)){
+				throw new Error(MensajeError);
+			};
+			
+			dollarBueno(input);
+			return String.format("El valor en euros es %s", convertirDollarEuro());
+		} catch (Exception e) {
+			return MensajeError;
+		}
+	}
+
+	public boolean urlBuena(String input) {
+		return input.contains("/dollar2eur/");
+	}
+
+	public void dollarBueno(String input) {
+		String valorEntrada = input.substring(12);
+		if (Float.isNaN(Float.parseFloat(valorEntrada))) {
+			throw new Error(MensajeError);
+		} else if (Float.parseFloat(valorEntrada) > 0) {
+			dollar = Float.parseFloat(valorEntrada);
+		} else {
+			throw new Error(MensajeError);
+		}
+	}
+
+	public String convertirDollarEuro() {
+		float euro = (float) (dollar * 0.86);
+		return (Float.toString(euro));
+	}
+}
