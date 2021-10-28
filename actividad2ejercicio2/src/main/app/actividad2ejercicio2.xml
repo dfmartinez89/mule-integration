@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.8.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+ http://www.mulesoft.org/schema/mule/core
+ http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+ http://www.mulesoft.org/schema/mule/stdio
+ http://www.mulesoft.org/schema/mule/stdio/current/mule-stdio.xsd">
+	<stdio:connector name="stdio" messageDelayTime="1000"
+		promptMessage="Please, enter your name: " doc:name="STDIO" />
+	<flow name="actividad2ejercicio2Flow">
+		<stdio:inbound-endpoint system="IN"
+			connector-ref="stdio" doc:name="STDIO" />
+		<component class="actividad2ejercicio2.HelloMessage"
+			doc:name="Java" />
+		<stdio:outbound-endpoint system="OUT"
+			connector-ref="stdio" doc:name="STDIO" />
+	</flow>
+</mule>
