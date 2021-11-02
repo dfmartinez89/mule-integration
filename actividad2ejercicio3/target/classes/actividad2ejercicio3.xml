@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+	<http:listener-config name="HTTP_Listener_Configuration"
+		host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration" />
+	<vm:connector name="VM" validateConnections="true"
+		doc:name="VM" />
+	<flow name="actividad2ejercicio3Flow">
+		<http:listener config-ref="HTTP_Listener_Configuration"
+			path="/" doc:name="HTTP" />
+		<message-properties-transformer
+			doc:name="Message Properties" scope="session">
+			<add-message-property key="nuevaPropiedad"
+				value="1000" />
+		</message-properties-transformer>
+		<set-variable variableName="Years" value="7500000"
+			doc:name="Variable" />
+		<set-session-variable variableName="Answer"
+			value="42" doc:name="Session Variable" />
+		<logger level="INFO" doc:name="Logger" />
+		<set-payload value="#[flowVars.Years]" doc:name="Set Payload" />
+		<file:outbound-endpoint path="..\actividad2ejercicio3\output"
+			outputPattern="resultado1.txt" responseTimeout="10000" doc:name="File" />
+		<vm:outbound-endpoint exchange-pattern="request-response"
+			connector-ref="VM" address="vm://vmasoutbound" doc:name="VM" />
+	</flow>
+	<flow name="actividad2ejercicio3Flow1">
+		<vm:inbound-endpoint exchange-pattern="request-response"
+			connector-ref="VM" address="vm://vmasoutbound" doc:name="VM" />
+		<logger level="INFO" doc:name="Logger" />
+		<set-payload
+			value="#[sessionVars.Answer + ' ' + sessionVars.nuevaPropiedad]"
+			doc:name="Set Payload" />
+		<file:outbound-endpoint path="..\actividad2ejercicio3\output"
+			outputPattern="resultado2.txt" responseTimeout="10000" doc:name="File" />
+	</flow>
+</mule>

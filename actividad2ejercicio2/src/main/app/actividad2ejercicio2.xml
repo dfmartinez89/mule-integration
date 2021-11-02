@@ -10,7 +10,8 @@
  http://www.mulesoft.org/schema/mule/stdio
  http://www.mulesoft.org/schema/mule/stdio/current/mule-stdio.xsd">
 	<stdio:connector name="stdio" messageDelayTime="1000"
-		promptMessage="Please, enter your name: " doc:name="STDIO" />
+		promptMessage="Please, enter your name and your age, splitted by '-': "
+		doc:name="STDIO" />
 	<flow name="actividad2ejercicio2Flow">
 		<stdio:inbound-endpoint system="IN"
 			connector-ref="stdio" doc:name="STDIO" />
