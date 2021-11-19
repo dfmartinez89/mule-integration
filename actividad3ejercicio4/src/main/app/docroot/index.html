@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Calcular Divisa</title>
+<script type="text/javascript" src="mule-resource/js/mule.js"></script>
+<script type="text/javascript">
+	function callEcho() {
+		mule.rpc("/services/echo", document.getElementById('txt1').value, callEchoResponse);
+	}
+	function callEchoResponse(message) {
+		document.getElementById("response").innerHTML = "<b>Respuesta:&nbsp;</b>"
+				+ message.data + "\n";
+	}
+</script>
+</head>
+<span>Introduce una cantidad positiva de dólar a convertir: </span>
+<body>
+	<input type="text" id="txt1" onkeyup="callEcho()" />
+	<div id="response"></div>
+</body>
+</html>

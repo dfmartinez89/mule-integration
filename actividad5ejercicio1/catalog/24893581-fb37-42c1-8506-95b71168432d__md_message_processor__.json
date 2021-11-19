@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "datos-empleado"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "tabla-empleados"
+        }
+    },
+    "id": "24893581-fb37-42c1-8506-95b71168432d",
+    "version": "5.2.0.0"
+}

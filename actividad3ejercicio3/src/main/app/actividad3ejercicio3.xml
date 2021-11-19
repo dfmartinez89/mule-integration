@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ajax http://www.mulesoft.org/schema/mule/ajax/current/mule-ajax.xsd">
+    <ajax:connector name="Ajax" serverUrl="http://localhost:8081/currency" resourceBase="src/main/app/docroot" jsonCommented="true" doc:name="Ajax"/>
+    <http:request-config name="HTTP_Request_Configuration" host="api.currencylayer.com" port="80" doc:name="HTTP Request Configuration"/>
+    <flow name="actividad3ejercicio3Flow">
+        <ajax:inbound-endpoint channel="/services/echo" connector-ref="Ajax" responseTimeout="10000" doc:name="Ajax"/>
+        <http:request config-ref="HTTP_Request_Configuration" path="/historical" method="GET" doc:name="HTTP">
+            <http:request-builder>
+                <http:query-param paramName="access_key" value="d358916f4ccf89acdabd1d1dac97a4e3"/>
+                <http:query-param paramName="date" value="#[message.payload]"/>
+            </http:request-builder>
+        </http:request>
+        <set-payload value="#[json://quotes]" doc:name="Set Payload"/>
+        <echo-component doc:name="Echo"/>
+    </flow>
+</mule>
