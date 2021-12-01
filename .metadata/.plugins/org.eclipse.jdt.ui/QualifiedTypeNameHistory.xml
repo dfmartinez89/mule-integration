@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.Float"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="org.mule.api.lifecycle.Callable"/>
 <fullyQualifiedTypeName name="actividad3ejercicio2.HelloWorldSOAP"/>
 <fullyQualifiedTypeName name="javax.jws.WebService"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
@@ -16,4 +15,5 @@
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="java.lang.Error"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="org.mule.api.lifecycle.Callable"/>
 </qualifiedTypeNameHistroy>

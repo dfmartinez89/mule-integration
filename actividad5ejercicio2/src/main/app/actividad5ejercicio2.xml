@@ -10,9 +10,15 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
     <flow name="actividad5ejercicio2Flow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="*" doc:name="HTTP"/>
         <set-payload value="#[message.inboundProperties.'http.request.path']" doc:name="Set Payload"/>
-        <or-filter doc:name="Or">
+        <or-filter doc:name="1er Filtro">
             <wildcard-filter pattern="/cliente*" caseSensitive="true"/>
             <wildcard-filter pattern="/producto*" caseSensitive="true"/>
+        </or-filter>
+        <or-filter doc:name="2do Filtro">
+            <wildcard-filter pattern="/productosSeleccionados" caseSensitive="true"/>
+            <wildcard-filter pattern="/clientesFieles" caseSensitive="true"/>
+            <wildcard-filter pattern="/productos" caseSensitive="true"/>
+            <wildcard-filter pattern="/clientes" caseSensitive="true"/>
         </or-filter>
         <component class="actividad5ejercicio2.CalledPath" doc:name="Java"/>
     </flow>
