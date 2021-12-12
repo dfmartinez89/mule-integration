@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:amqp="http://www.mulesoft.org/schema/mule/amqp" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/amqp http://www.mulesoft.org/schema/mule/amqp/current/mule-amqp.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8888" doc:name="HTTP Listener Configuration"/>
+    <amqp:connector name="AMQP_0_9_Connector" validateConnections="true" doc:name="AMQP-0-9 Connector"/>
+    <flow name="actividad6ejercicio3Flow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/items" doc:name="HTTP"/>
+        <amqp:outbound-endpoint queueName="items" responseTimeout="10000" exchange-pattern="request-response" doc:name="AMQP-0-9"/>
+        <flow-ref name="actividad6ejercicio3Flow1" doc:name="Consumer"/>
+        <set-payload value="#[&quot;Su petici&#243;n se ha procesado y el elemento ha sido guardado en el archivo resultado.json&quot;]" doc:name="Set Payload"/>
+    </flow>
+    <flow name="actividad6ejercicio3Flow1">
+        <amqp:inbound-endpoint queueName="items" responseTimeout="10000" exchange-pattern="request-response" doc:name="AMQP-0-9"/>
+        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <file:outbound-endpoint path="..\\actividad6ejercicio3\files" outputPattern="resultado.json" responseTimeout="10000" doc:name="File"/>
+    </flow>
+</mule>

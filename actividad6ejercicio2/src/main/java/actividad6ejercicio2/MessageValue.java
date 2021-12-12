@@ -7,7 +7,7 @@ public class MessageValue implements Callable {
 	public Object onCall(MuleEventContext eventContext)throws Exception{
 		//Se divide el mensaje para devolver solamente el campo value
 		 String valueArray[] = eventContext.getMessage().getPayloadAsString().split(",");
-		 return valueArray[1];
+		 return valueArray[1].replace("}","").trim();
 	}
 
 }
