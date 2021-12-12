@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:amqp="http://www.mulesoft.org/schema/mule/amqp" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/amqp http://www.mulesoft.org/schema/mule/amqp/current/mule-amqp.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+    <amqp:connector name="AMQP_0_9_Connector" validateConnections="true" doc:name="AMQP-0-9 Connector"/>
+    <flow name="actividad6ejercicio2Flow">
+        <amqp:inbound-endpoint queueName="act6ej1" responseTimeout="10000" exchange-pattern="request-response" doc:name="AMQP-0-9"/>
+        <byte-array-to-string-transformer doc:name="Byte Array to String"/>
+        <component class="actividad6ejercicio2.MessageValue" doc:name="Java"/>
+        <logger message="#[message.payload]" level="INFO" doc:name="Logger"/>
+        <file:outbound-endpoint path="..\\actividad6ejercicio2\output" outputPattern="value-#[function:datestamp].txt" responseTimeout="10000" doc:name="File"/>
+    </flow>
+</mule>

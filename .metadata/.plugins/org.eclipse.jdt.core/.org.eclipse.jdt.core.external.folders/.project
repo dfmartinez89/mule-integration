@@ -10,14 +10,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>.link0</name>
+			<name>.link2</name>
 			<type>2</type>
-			<location>C:/Users/dfmar/Documents/MASTER/Integracion/Anypoint6.1/AnypointStudio-for-win-64bit-6.1.2-201610111809/AnypointStudio/plugins/org.mule.tooling.server.3.8.2.ee_6.1.2.201610102257/mule/lib/mule/per-app</location>
+			<location>C:/Users/dfmar/Documents/MASTER/Integracion/AnypointStudio-amqp/plugins/org.mule.tooling.server.3.8.2.ee_6.1.2.201610102257/mule/lib/mule/per-app</location>
 		</link>
 		<link>
-			<name>.link1</name>
+			<name>.link3</name>
 			<type>2</type>
-			<location>C:/Users/dfmar/Documents/MASTER/Integracion/Anypoint6.1/AnypointStudio-for-win-64bit-6.1.2-201610111809/AnypointStudio/plugins/org.mule.tooling.server.3.8.2.ee_6.1.2.201610102257/mule/plugins/data-mapper-plugin/classes</location>
+			<location>C:/Users/dfmar/Documents/MASTER/Integracion/AnypointStudio-amqp/plugins/org.mule.tooling.server.3.8.2.ee_6.1.2.201610102257/mule/plugins/data-mapper-plugin/classes</location>
 		</link>
 	</linkedResources>
 </projectDescription>
