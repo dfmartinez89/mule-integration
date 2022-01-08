@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ajax http://www.mulesoft.org/schema/mule/ajax/current/mule-ajax.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
+    <ajax:connector name="Ajax" serverUrl="http://localhost:8081/currency" resourceBase="src/main/app/docroot" jsonCommented="true" doc:name="Ajax"/>
+    <http:request-config name="HTTP_Request_Configuration" host="api.currencylayer.com" port="80" doc:name="HTTP Request Configuration"/>
+    <flow name="proyectofinalFlow">
+        <poll doc:name="Poll">
+            <fixed-frequency-scheduler frequency="10" timeUnit="MINUTES"/>
+            <http:request config-ref="HTTP_Request_Configuration" path="/live" method="GET" doc:name="HTTP">
+                <http:request-builder>
+                    <http:query-param paramName="access_key" value="d358916f4ccf89acdabd1d1dac97a4e3"/>
+                    <http:query-param paramName="currencies" value="EUR"/>
+                    <http:query-param paramName="source" value="USD"/>
+                </http:request-builder>
+            </http:request>
+        </poll>
+        <component class="proyectofinal.Source1Transformer" doc:name="Java"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <file:outbound-endpoint path="..\proyectofinal\output\" outputPattern="source1-#[function:datestamp].json" responseTimeout="10000" doc:name="File"/>
+    </flow>
+</mule>
