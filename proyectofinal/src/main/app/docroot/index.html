@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Cambio de moneda</title>
+<script type="text/javascript" src="mule-resource/js/mule.js"></script>
+<script type="text/javascript">
+function callEcho() {
+var data = new Object();
+data = document.getElementById('txt1').value;
+mule.rpc("/services/echo", data, callEchoResponse);
+}
+function callEchoResponse(message) {
+document.getElementById("response").innerHTML =
+"<b>Respuesta:</b><br>" +
+"<span>" + message.data + "</span>";
+}
+</script>
+</head>
+<body>
+<span>Introduce una fecha para obtener el cambio (formato YYYY-MM-DD):
+</span>
+<input type="text" id="txt1" onkeyup="callEcho()" />
+<div id="response"></div>
+</body>
+</html>
