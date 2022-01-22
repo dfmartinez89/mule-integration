@@ -18,7 +18,7 @@ public class Source1Transformer implements Callable {
 	}
 
 	public void conversionDate() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("DD-MM-YYYY hh:mm:ss");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("DDMMYY-hhmmss");
 		Date date = new Date();
 		timestamp = dateFormat.format(date);
 		;

@@ -7,10 +7,10 @@
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/amqp http://www.mulesoft.org/schema/mule/amqp/current/mule-amqp.xsd">
-    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8888" doc:name="HTTP Listener Configuration"/>
     <amqp:connector name="AMQP_0_9_Connector" validateConnections="true" doc:name="AMQP-0-9 Connector"/>
     <flow name="actividad6ejercicio1Flow">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="*" doc:name="HTTP"/>
-        <amqp:outbound-endpoint queueName="act6ej1" responseTimeout="10000" exchange-pattern="request-response" doc:name="AMQP-0-9"/>
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/post-message" doc:name="HTTP"/>
+        <amqp:outbound-endpoint queueName="ProyectoFinal" responseTimeout="10000" exchange-pattern="request-response" doc:name="AMQP-0-9"/>
     </flow>
 </mule>

@@ -20,17 +20,18 @@ http://www.mulesoft.org/schema/mule/amqps http://www.mulesoft.org/schema/mule/am
     <flow name="ConversionSource1">
         <poll doc:name="Poll">
             <fixed-frequency-scheduler frequency="10" timeUnit="MINUTES"/>
-            <http:request config-ref="HTTP_Request_ConversionSource1" path="/live" method="GET" doc:name="HTTP">
+            <http:request config-ref="HTTP_Request_ConversionSource1" path="/live" method="OPTIONS" doc:name="HTTP">
                 <http:request-builder>
                     <http:query-param paramName="access_key" value="d358916f4ccf89acdabd1d1dac97a4e3"/>
                     <http:query-param paramName="currencies" value="EUR"/>
                     <http:query-param paramName="source" value="USD"/>
+
                 </http:request-builder>
             </http:request>
         </poll>
         <component class="proyectofinal.Source1Transformer" doc:name="TransformSource1"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
-        <file:outbound-endpoint path="..\proyectofinal\conversionrate\" outputPattern="source1-#[function:datestamp].json" responseTimeout="10000" doc:name="File"/>
+        <file:outbound-endpoint path="..\proyectofinal\conversionrate\" outputPattern="source1-#[function:datestamp].json" responseTimeout="10000" doc:name="Source1"/>
     </flow>
     <flow name="PostMessage">
         <http:listener config-ref="HTTP_POST_RabbitMessages" path="/post-message" doc:name="HTTP"/>
@@ -38,21 +39,15 @@ http://www.mulesoft.org/schema/mule/amqps http://www.mulesoft.org/schema/mule/am
         <set-payload value="Se ha ejecutado un POST al endpoint /post-message  #[function:datestamp]" doc:name="Set Payload"/>
         <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
     </flow>
-    <flow name="AsyncGetMessage">
-        <ajax:inbound-endpoint channel="/services/echo" connector-ref="Ajax" responseTimeout="10000" doc:name="Ajax"/>
-        <http:request config-ref="HTTP_Request_ConversionSource2" path="/v1/latest" method="GET" doc:name="HTTP"/>
-        <echo-component doc:name="Echo"/>
-        <component class="proyectofinal.Source2Transformer" doc:name="TransformSource2"/>
-        <file:outbound-endpoint path="..\proyectofinal\conversionrate2\" outputPattern="source1-#[function:datestamp].txt" responseTimeout="10000" doc:name="Copy_of_File"/>
-    </flow>
-    <flow name="GetMessage" processingStrategy="asynchronous">
+    <flow name="GetMessage">
         <amqp:inbound-endpoint queueName="ProyectoFinal" responseTimeout="10000" connector-ref="AMQP_0_9_Connector" doc:name="AMQP-0-9-GetMessage"/>
-        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
-        <json:object-to-json-transformer doc:name="Object to JSON"/>
-        <file:outbound-endpoint path="..\proyectofinal\messages\" outputPattern="message-#[function:datestamp].json" responseTimeout="10000" doc:name="File"/>
-        <set-payload value="Se ha ejecutado un GET al endpoint /get-message  #[function:datestamp]" doc:name="Set Payload"/>
-        <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
+        <byte-array-to-string-transformer doc:name="Byte Array to String"/>
+
+        <component class="proyectofinal.Source2Transformer" doc:name="TransformSource2"/>
+        <set-payload value="#[message.payload]" doc:name="Set Payload"/>
+        <file:outbound-endpoint path="..\proyectofinal\conversionrate2\" outputPattern="source1-#[function:datestamp].txt" responseTimeout="10000" doc:name="Source2"/>
     </flow>
+
     <flow name="EndpointsLog">
         <logger level="INFO" doc:name="Logger"/>
         <file:outbound-endpoint path="..\proyectofinal\logs\" outputPattern="endpoint-#[function:datestamp].txt" responseTimeout="10000" doc:name="File"/>
