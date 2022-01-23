@@ -41,10 +41,10 @@ http://www.mulesoft.org/schema/mule/amqps http://www.mulesoft.org/schema/mule/am
     </flow>
     <flow name="GetMessage">
         <amqp:inbound-endpoint queueName="ProyectoFinal" responseTimeout="10000" connector-ref="AMQP_0_9_Connector" doc:name="AMQP-0-9-GetMessage"/>
-        <byte-array-to-string-transformer doc:name="Byte Array to String"/>
+        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+        <component class="proyectofinal.Convertir" doc:name="Java"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
 
-        <component class="proyectofinal.Source2Transformer" doc:name="TransformSource2"/>
-        <set-payload value="#[message.payload]" doc:name="Set Payload"/>
         <file:outbound-endpoint path="..\proyectofinal\conversionrate2\" outputPattern="source1-#[function:datestamp].txt" responseTimeout="10000" doc:name="Source2"/>
     </flow>
 
