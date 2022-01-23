@@ -30,20 +30,20 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
                 </http:request-builder>
             </http:request>
         </poll>
-        <component class="proyectofinal.GuardarFuente1" doc:name="Fuente1"/>
+        <component class="proyectofinal.GuardarFuente1" doc:name="Java- Fuente1"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
         <file:outbound-endpoint path="..\proyectofinal\factor1\" outputPattern="source1-#[function:datestamp].json" responseTimeout="10000" doc:name="Source1"/>
     </flow>
     <flow name="PostMessage">
         <http:listener config-ref="HTTP_POST_RabbitMessages" path="/post-message" doc:name="HTTP"/>
         <amqp:outbound-endpoint queueName="ProyectoFinal" responseTimeout="10000" exchange-pattern="request-response" doc:name="AMQP-0-9-PostMesssage"/>
-        <set-payload value="Se ha ejecutado un POST al endpoint /post-message  #[function:datestamp]" doc:name="Log"/>
+        <set-payload value="Se ha enviado un mensaje a la cola" doc:name="Set Payload - Log"/>
         <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
     </flow>
     <flow name="GetMessage">
         <amqp:inbound-endpoint queueName="ProyectoFinal" responseTimeout="10000" connector-ref="AMQP_0_9_Connector" doc:name="AMQP-0-9-GetMessage"/>
         <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
-        <component class="proyectofinal.Convertir" doc:name="Conversion"/>
+        <component class="proyectofinal.Convertir" doc:name="Java - Conversion"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
         <dw:transform-message metadata:id="5f831fd0-cac5-40a2-a8ff-8c613130f222" doc:name="Transform Message">
             <dw:input-payload mimeType="application/json"/>
@@ -59,19 +59,20 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
         </dw:transform-message>
 
         <file:outbound-endpoint path="..\proyectofinal\csv\" outputPattern="source1-#[function:datestamp].csv" responseTimeout="10000" doc:name="CSV"/>
-        <set-payload value="Se han transformado los mensajes de la cola  #[function:datestamp]" doc:name="Log"/>
+        <set-payload value="Se han transformado los mensajes de la cola" doc:name="Set Payload - Log"/>
         <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
     </flow>
     <flow name="LeerCSV">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/get-csv" doc:name="HTTP"/>
-        <component class="proyectofinal.LeerCSVGuardado" doc:name="Java"/>
+        <component class="proyectofinal.LeerCSVGuardado" doc:name="Java - Leer CSV"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
-        <set-payload value="#[message.payload]" doc:name="LeerCSV"/>
+        <set-payload value="#[message.payload]" doc:name="Set Payload - LeerCSV"/>
         <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
     </flow>
 
     <flow name="EndpointsLog">
         <logger level="INFO" doc:name="Logger"/>
+
         <file:outbound-endpoint path="..\proyectofinal\logs\" outputPattern="log-#[function:datestamp].txt" responseTimeout="10000" doc:name="File"/>
     </flow>
 </mule>

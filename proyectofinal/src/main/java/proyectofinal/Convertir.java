@@ -71,6 +71,8 @@ public class Convertir implements Callable {
 	public Float obtenerFactorConversionFuente1() throws IOException, FileNotFoundException {
 		FileReader fileReader = null;
 		String factor1String = "";
+		Float factor1 = (float) 0.0;
+
 		try {
 
 			File source1File = new File("../proyectofinal/factor1/");
@@ -82,6 +84,7 @@ public class Convertir implements Callable {
 				BufferedReader reader = new BufferedReader(fileReader);
 				factor1String = reader.readLine();
 				reader.close();
+				factor1 = Float.parseFloat(factor1String.split(",")[0].split(":")[1].trim());
 			}
 
 		} catch (FileNotFoundException e) {
@@ -94,7 +97,6 @@ public class Convertir implements Callable {
 		finally {
 			fileReader.close();
 		}
-		Float factor1 = Float.parseFloat(factor1String.split(",")[0].split(":")[1].trim());
 		return factor1;
 	}
 
