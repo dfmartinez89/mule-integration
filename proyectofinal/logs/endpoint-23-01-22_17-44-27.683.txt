@@ -1,0 +1,1 @@
+{"nombre":"Fifty","pais":"Hungría","euros":"88146.5","fecha":"20220123-05:43:30"}

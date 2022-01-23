@@ -67,10 +67,11 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
         <component class="proyectofinal.LeerCSVGuardado" doc:name="Java"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
         <set-payload value="#[message.payload]" doc:name="LeerCSV"/>
+        <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
     </flow>
 
     <flow name="EndpointsLog">
         <logger level="INFO" doc:name="Logger"/>
-        <file:outbound-endpoint path="..\proyectofinal\logs\" outputPattern="endpoint-#[function:datestamp].txt" responseTimeout="10000" doc:name="File"/>
+        <file:outbound-endpoint path="..\proyectofinal\logs\" outputPattern="log-#[function:datestamp].txt" responseTimeout="10000" doc:name="File"/>
     </flow>
 </mule>
