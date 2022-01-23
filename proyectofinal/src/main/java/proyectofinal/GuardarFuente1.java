@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import org.mule.api.MuleEventContext;
 import org.mule.api.lifecycle.Callable;
 
-public class Source1Transformer implements Callable {
+public class GuardarFuente1 implements Callable {
 	String timestamp;
 
 	public Object onCall(MuleEventContext eventContext) throws Exception {
@@ -21,6 +21,5 @@ public class Source1Transformer implements Callable {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("DDMMYY-hhmmss");
 		Date date = new Date();
 		timestamp = dateFormat.format(date);
-		;
 	}
 }

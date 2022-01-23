@@ -38,7 +38,7 @@ public class Convertir implements Callable {
 
 			Float factor2 = 1 / Float.parseFloat(respuestaDeAPI);			
 
-			euro = dollar * obtenerMenorFactorConversion(factor2, obtenerFactorConversionSource1());
+			euro = dollar * obtenerMenorFactorConversion(factor2, obtenerFactorConversionFuente1());
 			mapResult.put("nombre" , valueArray[1].split(":")[1].replace("\"", "").trim());
 			mapResult.put("pais" , valueArray[4].split(":")[1].replace("\"", "").replace("}", "").trim());
 			mapResult.put("euros" , String.valueOf(euro));
@@ -52,7 +52,7 @@ public class Convertir implements Callable {
 		return mapResult;
 	}
 
-	public Float obtenerFactorConversionSource1() throws IOException, FileNotFoundException {
+	public Float obtenerFactorConversionFuente1() throws IOException, FileNotFoundException {
 		FileReader fileReader = null;
 		String factor1String = "";
 		try {

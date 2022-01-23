@@ -16,8 +16,8 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
     <http:request-config name="HTTP_Request_ConversionSource1" host="api.currencylayer.com" port="80" doc:name="HTTP Request Configuration"/>
     <http:listener-config name="HTTP_POST_RabbitMessages" host="localhost" port="8888" doc:name="HTTP Listener Configuration"/>
     <amqp:connector name="AMQP_0_9_Connector" validateConnections="true" doc:name="AMQP-0-9 Connector" prefetchCount="1" numberOfChannels="1" />
-    <http:request-config name="HTTP_Request_ConversionSource2" host="api.exchangeratesapi.io" port="80" doc:name="HTTP Request Configuration"/>
-    <ajax:connector name="Ajax" serverUrl="http://localhost:8081/" resourceBase="src/main/app/docroot" jsonCommented="true" doc:name="Ajax"/>
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
+
     <flow name="ConversionSource1">
         <poll doc:name="Poll">
             <fixed-frequency-scheduler frequency="10" timeUnit="MINUTES"/>
@@ -30,14 +30,14 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
                 </http:request-builder>
             </http:request>
         </poll>
-        <component class="proyectofinal.Source1Transformer" doc:name="Fuente1Conversion"/>
+        <component class="proyectofinal.GuardarFuente1" doc:name="Fuente1"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
         <file:outbound-endpoint path="..\proyectofinal\factor1\" outputPattern="source1-#[function:datestamp].json" responseTimeout="10000" doc:name="Source1"/>
     </flow>
     <flow name="PostMessage">
         <http:listener config-ref="HTTP_POST_RabbitMessages" path="/post-message" doc:name="HTTP"/>
         <amqp:outbound-endpoint queueName="ProyectoFinal" responseTimeout="10000" exchange-pattern="request-response" doc:name="AMQP-0-9-PostMesssage"/>
-        <set-payload value="Se ha ejecutado un POST al endpoint /post-message  #[function:datestamp]" doc:name="Set Payload"/>
+        <set-payload value="Se ha ejecutado un POST al endpoint /post-message  #[function:datestamp]" doc:name="Log"/>
         <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
     </flow>
     <flow name="GetMessage">
@@ -59,6 +59,14 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
         </dw:transform-message>
 
         <file:outbound-endpoint path="..\proyectofinal\csv\" outputPattern="source1-#[function:datestamp].csv" responseTimeout="10000" doc:name="CSV"/>
+        <set-payload value="Se han transformado los mensajes de la cola  #[function:datestamp]" doc:name="Log"/>
+        <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
+    </flow>
+    <flow name="LeerCSV">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/get-csv" doc:name="HTTP"/>
+        <component class="proyectofinal.LeerCSVGuardado" doc:name="Java"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <set-payload value="#[message.payload]" doc:name="LeerCSV"/>
     </flow>
 
     <flow name="EndpointsLog">
