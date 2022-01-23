@@ -1,1 +1,0 @@
-{"euros":"881.465","fecha":"20220123-01:20:40","nombre":" \"Fifty\"","pais":" \"Spain\"\r\n}"}

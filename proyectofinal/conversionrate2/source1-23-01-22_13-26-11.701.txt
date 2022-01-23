@@ -1,1 +1,0 @@
-{"euros":"881.465","fecha":"20220123-01:26:10","nombre":"Fifty","pais":"Spain"}

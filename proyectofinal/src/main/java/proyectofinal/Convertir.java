@@ -5,10 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.security.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -22,9 +20,11 @@ import org.mule.api.lifecycle.Callable;
 
 public class Convertir implements Callable {
 	String dateForMap = "";
+	final private String URL_API_CONVERT = "http://api.exchangeratesapi.io/v1/latest?access_key=9d1d8591cd422e650a25bdf543b5d461&symbols=USD&format=1";
+	final private String URL_API_TRANSLATE = "";
 
 	public Object onCall(MuleEventContext eventContext) throws Exception {
-		Float euro = null;
+		Float euro = (float) 0.0;
 		Map<String, String> mapResult = new LinkedHashMap<String, String>();
 		
 		try {
@@ -33,7 +33,7 @@ public class Convertir implements Callable {
 			String dollars = valueArray[3].split(":")[1];
 			Float dollar = (Float.parseFloat(dollars));
 
-			String respuestaDeAPI = conectarToAPI();
+			String respuestaDeAPI = conectarToAPI(URL_API_CONVERT);
 			respuestaDeAPI = extraerValorDelEuro(respuestaDeAPI);
 
 			Float factor2 = 1 / Float.parseFloat(respuestaDeAPI);			
@@ -57,7 +57,7 @@ public class Convertir implements Callable {
 		String factor1String = "";
 		try {
 
-			File source1File = new File("../proyectofinal/conversionrate/");
+			File source1File = new File("../proyectofinal/factor1/");
 			File[] listado = source1File.listFiles();
 			File lastfile = listado[listado.length - 1];
 
@@ -92,13 +92,11 @@ public class Convertir implements Callable {
 		dateForMap = dateFormat.format(date);		
 	}
 
-	private String conectarToAPI() {
-		String URL_API = "http://api.exchangeratesapi.io/v1/latest?access_key=9d1d8591cd422e650a25bdf543b5d461&symbols=USD&format=1";
-
+	private String conectarToAPI(String url) {
 		// Cliente para la conexi�n
 		Client client = ClientBuilder.newClient();
 		// Definici�n de URL
-		WebTarget target = client.target(URL_API);
+		WebTarget target = client.target(url);
 		// Recogemos el resultado en una variable String
 		String respuesta = target.request(MediaType.APPLICATION_JSON).get(String.class);
 
