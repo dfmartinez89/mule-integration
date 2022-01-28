@@ -18,7 +18,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
     <amqp:connector name="AMQP_0_9_Connector" validateConnections="true" doc:name="AMQP-0-9 Connector" prefetchCount="1" numberOfChannels="1" />
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
 
-    <flow name="ConversionSource1">
+    <flow name="Fuente1">
         <poll doc:name="Poll">
             <fixed-frequency-scheduler frequency="10" timeUnit="MINUTES"/>
             <http:request config-ref="HTTP_Request_ConversionSource1" path="/live" method="OPTIONS" doc:name="HTTP">
@@ -32,7 +32,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
         </poll>
         <component class="proyectofinal.GuardarFuente1" doc:name="Java- Fuente1"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
-        <file:outbound-endpoint path="..\proyectofinal\factor1\" outputPattern="source1-#[function:datestamp].json" responseTimeout="10000" doc:name="Source1"/>
+        <file:outbound-endpoint path="..\proyectofinal\factor1\" outputPattern="source1-#[function:datestamp].json" responseTimeout="10000" doc:name="Fuente1"/>
     </flow>
     <flow name="PostMessage">
         <http:listener config-ref="HTTP_POST_RabbitMessages" path="/post-message" doc:name="HTTP"/>
@@ -73,6 +73,6 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
     <flow name="EndpointsLog">
         <logger level="INFO" doc:name="Logger"/>
 
-        <file:outbound-endpoint path="..\proyectofinal\logs\" outputPattern="log-#[function:datestamp].txt" responseTimeout="10000" doc:name="File"/>
+        <file:outbound-endpoint path="..\proyectofinal\logs\" outputPattern="log-#[function:datestamp].txt" responseTimeout="10000" doc:name="Log"/>
     </flow>
 </mule>

@@ -5,8 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -20,15 +18,17 @@ import org.mule.api.lifecycle.Callable;
 
 public class Convertir implements Callable {
 	/**
-	 * Timestmap de conversion
+	 * Formato de Timestmap 
 	 */
-	String dateForMap = "";
-
+	String dateFormat = "YYYYMMDD-hh:mm:ss";
+	
+	GuardarFuente1 fuente1 = new GuardarFuente1();
+	
 	/**
 	 * url de fuente externa 2 de conversion
 	 */
-	final private String URL_API_CONVERT = "http://api.exchangeratesapi.io/v1/latest?access_key=9d1d8591cd422e650a25bdf543b5d461&symbols=USD&format=1";
-
+//	final private String URL_API_CONVERT = "http://api.exchangeratesapi.io/v1/latest?access_key=9d1d8591cd422e650a25bdf543b5d461&symbols=USD&format=1";
+	final private String URL_API_CONVERT = "https://v6.exchangerate-api.com/v6/a1a3428c39b01fc4cdf4e323/pair/USD/EUR";
 	/**
 	 * url de fuente externa de traduccion
 	 */
@@ -45,20 +45,18 @@ public class Convertir implements Callable {
 
 			String respuestaDeAPIEuro = conectarToAPI(URL_API_CONVERT);
 			respuestaDeAPIEuro = extraerValorDelEuro(respuestaDeAPIEuro);
+			Float factor2 = Float.parseFloat(respuestaDeAPIEuro);
 
 			String country = valueArray[4].split(":")[1].replace("\"", "").replace("}", "").trim();
 
 			String respuestaDeAPIPais = conectarToAPI(URL_API_TRANSLATE + country + "?fullText=false");
 			respuestaDeAPIPais = extraerPaisTraducido(respuestaDeAPIPais);
 
-			Float factor2 = 1 / Float.parseFloat(respuestaDeAPIEuro);
-
 			euro = dollar * obtenerMenorFactorConversion(factor2, obtenerFactorConversionFuente1());
-			conversionDate();
 			mapResult.put("nombre", valueArray[1].split(":")[1].replace("\"", "").trim());
 			mapResult.put("pais", respuestaDeAPIPais);
 			mapResult.put("euros", String.valueOf(euro));
-			mapResult.put("fecha", dateForMap);
+			mapResult.put("fecha", fuente1.conversionDate(dateFormat));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,19 +102,15 @@ public class Convertir implements Callable {
 		return factor2 < factor1 ? factor2 : factor1;
 	}
 
-	public void conversionDate() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("YYYYMMDD-hh:mm:ss");
-		Date date = new Date();
-		dateForMap = dateFormat.format(date);
-	}
+	
 
 	private String conectarToAPI(String url) {
 		// Recogemos el resultado en una variable String
 		String respuesta = "";
 		try {
-			// Cliente para la conexi�n
+			// Cliente para la conexion
 			Client client = ClientBuilder.newClient();
-			// Definici�n de URL
+			// Definicion de URL
 			WebTarget target = client.target(url);
 			respuesta = target.request(MediaType.APPLICATION_JSON).get(String.class);
 			if (respuesta.contains("404")) {
@@ -131,7 +125,7 @@ public class Convertir implements Callable {
 	}
 
 	private String extraerValorDelEuro(String respuesta) {
-		return respuesta.split(",")[4].split("}")[0].split(":")[2];
+		return respuesta.split(",")[11].split(":")[1].replace("}", "").trim();
 	}
 
 	private String extraerPaisTraducido(String respuesta) {

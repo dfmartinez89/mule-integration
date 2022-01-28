@@ -7,19 +7,28 @@ import org.mule.api.MuleEventContext;
 import org.mule.api.lifecycle.Callable;
 
 public class GuardarFuente1 implements Callable {
-	String timestamp;
+	/**
+	 * Formato de Timestmap
+	 */
+	String timeFormat = "DDMMYY-hhmmss";
 
+	/**
+	 * Método que transforma la respuesta de la fuente externa 1
+	 */
 	public Object onCall(MuleEventContext eventContext) throws Exception {
 		String valueArray[] = eventContext.getMessage().getPayloadAsString().split(",");
-		conversionDate(); // se obtiene timestamp de la conversi�n
 		return valueArray[5].replace("\"quotes\":", "").replace("}}", "").trim()
-				.concat(",\"DATE\":" + timestamp + "}");
+				.concat(",\"DATE\":" + conversionDate(timeFormat) + "}");
 
 	}
 
-	public void conversionDate() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("DDMMYY-hhmmss");
+	/**
+	 * Método que obtiene el timestamp con el formato especificado
+	 */
+	public String conversionDate(String format) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat(format);
 		Date date = new Date();
-		timestamp = dateFormat.format(date);
+		String dateConversion = dateFormat.format(date);
+		return dateConversion;
 	}
 }
