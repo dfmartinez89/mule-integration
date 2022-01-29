@@ -9,6 +9,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class LeerCSVGuardado {
+	/**
+	 * Método que obtiene los datos del fichero csv guardado en el filesystem
+	 * @return mapResult: objeto con los datos del fichero csv
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
 	public Map<String, String> obtenerJsonFromCSV() throws IOException, FileNotFoundException {
 		FileReader fileReader = null;
 		String columnasCSV = "";

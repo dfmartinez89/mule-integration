@@ -32,7 +32,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
         </poll>
         <component class="proyectofinal.GuardarFuente1" doc:name="Java- Fuente1"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
-        <file:outbound-endpoint path="..\proyectofinal\factor1\" outputPattern="source1-#[function:datestamp].json" responseTimeout="10000" doc:name="Fuente1"/>
+        <file:outbound-endpoint path="..\proyectofinal\factor1\" outputPattern="fuente1-#[function:datestamp].json" responseTimeout="10000" doc:name="Fuente1"/>
     </flow>
     <flow name="PostMessage">
         <http:listener config-ref="HTTP_POST_RabbitMessages" path="/post-message" doc:name="HTTP"/>
@@ -58,7 +58,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
 }]]]></dw:set-payload>
         </dw:transform-message>
 
-        <file:outbound-endpoint path="..\proyectofinal\csv\" outputPattern="source1-#[function:datestamp].csv" responseTimeout="10000" doc:name="CSV"/>
+        <file:outbound-endpoint path="..\proyectofinal\csv\" outputPattern="mensaje-#[function:datestamp].csv" responseTimeout="10000" doc:name="CSV"/>
         <set-payload value="Se han transformado los mensajes de la cola" doc:name="Set Payload - Log"/>
         <flow-ref name="EndpointsLog" doc:name="EndpointsLog"/>
     </flow>
