@@ -72,7 +72,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
 
     <flow name="EndpointsLog">
         <logger level="INFO" doc:name="Logger"/>
+        <file:outbound-endpoint path="..\\proyectofinal\logs" outputPattern="endpointslog-#[function:datestamp].txt" responseTimeout="10000" doc:name="Log"/>
 
-        <file:outbound-endpoint path="..\proyectofinal\logs\" outputPattern="log-#[function:datestamp].txt" responseTimeout="10000" doc:name="Log"/>
     </flow>
 </mule>
