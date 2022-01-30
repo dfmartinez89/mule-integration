@@ -25,18 +25,19 @@ public class LeerCSVGuardado {
 
 			File csvFile = new File("../proyectofinal/csv/");
 			File[] listado = csvFile.listFiles();
-			File lastfile = listado[listado.length - 1];
+			File lastfile = listado[listado.length - 1]; //se obtiene el último fichero guardado en la ruta
 
 			fileReader = new FileReader(lastfile.getAbsolutePath());
 			if (fileReader != null) {
 				BufferedReader reader = new BufferedReader(fileReader);
-				columnasCSV = reader.readLine();
-				filasCSV = reader.readLine();
+				columnasCSV = reader.readLine(); //la primera línea del fichero csv son las columnas
+				filasCSV = reader.readLine(); //la segunda línea corresponde a la primera fila
 				reader.close();
 				String arrayColumnas[] = columnasCSV.split(",");
 				String arrayFilas[] = filasCSV.split(",");
+				
 				for (int i = 0; i < arrayFilas.length; i++) {
-					mapResult.put(arrayColumnas[i], arrayFilas[i]);
+					mapResult.put(arrayColumnas[i], arrayFilas[i]); //Se construye un objeto map para devolverlo en el payload del mensaje
 				}
 
 			}

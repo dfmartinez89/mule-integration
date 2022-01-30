@@ -22,6 +22,9 @@ public class Convertir implements Callable {
 	 */
 	String dateFormat = "YYYYMMDD-hh:mm:ss";
 
+	/**
+	 * Instancia de la clase donde se implementa el método para obtener el timestamp
+	 */
 	GuardarFuente1 fuente1 = new GuardarFuente1();
 
 	/**
@@ -66,11 +69,11 @@ public class Convertir implements Callable {
 			//Se calcula la conversión a euros usando el menor factor de conversión
 			euro = dollar * obtenerMenorFactorConversion(factor2, obtenerFactorConversionFuente1());
 			
-			//Se construye el objeto con los datos transformados
+			//Se construye el objeto map con los datos transformados
 			mapResult.put("nombre", valueArray[1].split(":")[1].replace("\"", "").trim());
 			mapResult.put("pais", respuestaDeAPIPais);
 			mapResult.put("euros", String.valueOf(euro));
-			mapResult.put("fecha", fuente1.conversionDate(dateFormat));
+			mapResult.put("fecha", fuente1.conversionDate(dateFormat)); //se incluye el timestamp con el formato requerido
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -143,13 +146,13 @@ public class Convertir implements Callable {
 	 * @return respuesta de la petición
 	 */
 	private String conectarToAPI(String url) {
-		// Recogemos el resultado en una variable String
 		String respuesta = "";
 		try {
 			// Cliente para la conexion
 			Client client = ClientBuilder.newClient();
 			// Definicion de URL
 			WebTarget target = client.target(url);
+			// Recogemos el response
 			respuesta = target.request(MediaType.APPLICATION_JSON).get(String.class);
 			if (respuesta.contains("404")) {
 				throw new Error("Literal de país erróneo");
@@ -163,7 +166,7 @@ public class Convertir implements Callable {
 	}
 
 	/**
-	 * Método que obtiene el valor del factor de conversión
+	 * Método que obtiene el valor del factor de conversión a partir de la respuesta de la fuente 2
 	 * 
 	 * @param respuesta de la api de la fuente 2
 	 * 
@@ -174,7 +177,7 @@ public class Convertir implements Callable {
 	}
 
 	/**
-	 * Método que obtiene el nombre del país traducido al español
+	 * Método que obtiene el nombre del país traducido al español a partir de la respuesta de la api
 	 * 
 	 * @param respuesta
 	 * 
