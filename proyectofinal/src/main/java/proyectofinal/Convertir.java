@@ -155,7 +155,7 @@ public class Convertir implements Callable {
 			// Recogemos el response
 			respuesta = target.request(MediaType.APPLICATION_JSON).get(String.class);
 			if (respuesta.contains("404")) {
-				throw new Error("Literal de país erróneo");
+				throw new Error("Error en la llamada a la fuente externa");
 			}
 		} catch (Error e) {
 			e.printStackTrace();

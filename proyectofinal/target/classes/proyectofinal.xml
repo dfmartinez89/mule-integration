@@ -27,6 +27,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
                     <http:query-param paramName="currencies" value="EUR"/>
                     <http:query-param paramName="source" value="USD"/>
 
+
                 </http:request-builder>
             </http:request>
         </poll>
